@@ -26,32 +26,33 @@ namespace labnum4
                     Console.WriteLine(fauxInts[i - 1] + " " + fauxInts[i - 1] * fauxInts[i - 1] +" "+ fauxInts[i - 1] * fauxInts[i - 1] * fauxInts[i - 1]);
                   
                 } 
+                
 
                 Console.WriteLine();
 
                 //prompts user to continue (y/n)
                 string Response = ("Wanna start again ? (y/n)");
                 bool end = true;
-
+                while (end)
                 {
                     Console.WriteLine(Response);
                     string UserRestart = Console.ReadLine();
+                    
 
                     if (UserRestart == "y")
                     {
                         LoopRunProgram = true;
                         end = false;
                     }
-                    if (UserRestart == "n")
+                    else if (UserRestart == "n")
                     {
                         LoopRunProgram = false;
                         end = false;
                     }
                     else
                     {
-
-                        Console.WriteLine("I don't know what you're trying to say,is that a Y or an N?");
-                        end = false;
+                        Console.WriteLine("I don't know what you're trying to say, is that a Y or an N?");
+                        end = true;
                     }
 
                 }
