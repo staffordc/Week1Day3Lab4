@@ -17,27 +17,29 @@ namespace labnum4
                 //enter an integer USER
                 Console.WriteLine("USER, PLEASE FEED ME A NUMBER! AN INTEGER!");
                 int UserNumber = Int32.Parse(Console.ReadLine());
-                
+
                 //display a table of squares and cubes from 1 to Userinteger
-                int[] fauxInts = new int[UserNumber];
-                for (var i = 1; i <= UserNumber; i++ )
+                String s = String.Format("{0,-10} {1,-10} {2,-10}\n\n", "Number", "Squared", "Cubed");
+                string Equ = string.Format("{0,-10} {1,-10} {2,-10}", "===========", "===========", "===========");
+                Console.WriteLine($"\n{s}\n{Equ}\n");
+                for (var i = 1; i <= UserNumber; i++)
                 {
-                    fauxInts[i-1] = i;
-                    Console.WriteLine(fauxInts[i - 1] + " " + fauxInts[i - 1] * fauxInts[i - 1] +" "+ fauxInts[i - 1] * fauxInts[i - 1] * fauxInts[i - 1]);
-                  
-                } 
-                
+                    String num = String.Format("{0,-10} {1,-10} {2,-10}", i, (i * i), (i * i * i));
+                    
+                    Console.WriteLine($"\n{num}");
+                }
+
 
                 Console.WriteLine();
 
                 //prompts user to continue (y/n)
-                string Response = ("Wanna start again ? (y/n)");
+                string Response = ("Wanna start again? (y/n)");
                 bool end = true;
                 while (end)
                 {
                     Console.WriteLine(Response);
                     string UserRestart = Console.ReadLine();
-                    
+
 
                     if (UserRestart == "y")
                     {
